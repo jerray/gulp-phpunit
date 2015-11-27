@@ -22,6 +22,7 @@ module.exports = function(command, opt) {
 		debug:              opt.debug               || false,
 		clear:              opt.clear               || false,
 		dryRun:             opt.dryRun              || false,
+		pipeStdout:         opt.pipeStdout          || false,
 
 		// code coverage options
 		coverageClover:     opt.coverageClover      || '',
@@ -234,6 +235,9 @@ module.exports = function(command, opt) {
 
 			}).stdout.on('data', function(data) {
 					 var str = data.toString();
+           if (opt.pipeStdout) {
+            process.stdout.write(str);
+           }
 					cb(null, str);
 				});
 		}
