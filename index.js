@@ -139,7 +139,7 @@ module.exports = function(command, opt) {
 		if(opt.processIsolation)    { cmd += ' --process-isolation'; }
 		if(opt.noGlobalsBackup)     { cmd += ' --no-globals-backup'; }
 		if(opt.staticBackup)        { cmd += ' --static-backup'; }
-		if(opt.colors)              { cmd += ' --colors'; }
+		if(opt.colors)              { cmd += ' --colors=always'; }
 		if(opt.stderr)              { cmd += ' --stderr'; }
 		if(opt.stopOnError)         { cmd += ' --stop-on-error'; }
 		if(opt.stopOnFailure)       { cmd += ' --stop-on-failure'; }
